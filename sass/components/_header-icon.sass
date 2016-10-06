@@ -1,0 +1,47 @@
+.window-header
+  .icon
+    display: inline-block
+    width: 16px
+    height: 13px
+    margin: 9px 5px 9px 10px
+    float: left
+    border: 1px solid #8f9297
+    box-sizing: border-box
+
+    .icon-header
+      height: 2px
+      background: linear-gradient(to bottom, rgba(211, 217, 224, 1) 0%, rgba(202, 204, 205, 1) 100%)
+
+      .dots
+        position: relative
+        width: 1px
+        height: 1px
+        margin-right: 2px
+        float: right
+        background: #687991
+
+        &::before, &::after
+          display: block
+          position: absolute
+          top: 0
+          width: 1px
+          height: 1px
+          background: #687991
+          content: ''
+
+        &::before
+          left: -2px
+
+        &::after
+          left: 2px
+
+    .icon-main
+      height: 9px
+      background: #000
+
+      span
+        color: #fff
+        font-family: monospace
+        font-size: 8px
+        line-height: 9px
+        text-align: center

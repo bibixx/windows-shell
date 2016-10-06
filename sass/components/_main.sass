@@ -1,0 +1,41 @@
+.window-main
+  color: rgba(255, 255, 255, 0.75)
+
+  p.line
+    margin: 0
+    font-family: 'Lucida Console', monospace
+    font-size: 14px
+    white-space: pre-wrap
+
+    &:focus
+      outline: 0
+
+    &:empty::after
+      content: '.'
+      visibility: hidden
+
+    &#active
+      position: relative
+      word-break: break-all
+
+      &::after
+        display: inline-block
+        position: absolute
+        bottom: 0
+        width: 8px
+        height: 4px
+        background: rgba(255, 255, 255, 0.75)
+        content: ''
+        visibility: hidden
+        animation: ping 1s infinite
+
+    @keyframes ping
+      0%, 50%
+        opacity: 0
+
+      50.1%, 100%
+        opacity: 1
+
+
+textarea#hidden:focus ~ .window .window-main p.line#active::after
+  visibility: visible
