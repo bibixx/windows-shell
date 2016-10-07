@@ -75,15 +75,15 @@ gulp.task('sass', function () {
         cascade: false
       })
     )
-    .pipe(sourcemaps.write())
     .pipe(
       rename({
         suffix: '.min'
       })
     )
+    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./css'))
     .pipe(
-      browserSync.reload({stream: true})
+      browserSync.stream({match: '**/*.css'})
     );
 });
 
@@ -114,7 +114,7 @@ gulp.task('js-old', function() {
         suffix: '.min'
       })
     )
-    .pipe(sourcemaps.write())
+    .pipe(sourcemaps.write('./'))
     .pipe(
       gulp.dest('./dist/js/')
     )
@@ -131,7 +131,7 @@ gulp.task('js', function () {
       .pipe(buffer())
       .pipe(sourcemaps.init())
       .pipe(uglify())
-      .pipe(sourcemaps.write())
+      .pipe(sourcemaps.write('./'))
       .pipe(gulp.dest('./dist/js'))
       .pipe(
         browserSync.reload({stream: true})
