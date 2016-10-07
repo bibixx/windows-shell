@@ -77,6 +77,7 @@ export function createWindow() {
   $window.appendChild( $windowMain ); // Append body to window
 
   this.windowMain = $windowMain;
+  this.windowHeader = $windowHeader;
   this.windowEl = $window;
   this.hiddenEl = $hidden;
 

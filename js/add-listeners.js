@@ -1,3 +1,5 @@
+import { move } from "./move";
+
 export function addListeners() {
   const $hidden = this.hiddenEl;
   const $window = this.windowEl;
@@ -29,4 +31,6 @@ export function addListeners() {
       $hidden.value = "";
     }
   });
+
+  move.call(this, $window);
 }

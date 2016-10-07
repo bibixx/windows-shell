@@ -3,17 +3,15 @@ import { output, print } from './output';
 import { getCommand } from './get-command';
 import { addListeners } from './add-listeners';
 
+import { commands } from './commands/index';
+
 import { echo } from './commands/echo';
 import { help } from './commands/help';
 import { clear } from './commands/clear';
 
 class cmd {
   constructor() {
-    this.commands = {
-      "echo": {"call": this._echo, "desc": "Displays messages, or turns command echoing on or off."},
-      "help": {"call": this._help, "desc": "Provides gelp information for Windows commands."},
-      "cls":  {"call": this._clear, "desc": "Clears the screen."},
-    };
+    this.commands = commands.call(this);
 
     this.activeEl = {};
 

@@ -17,7 +17,9 @@ export function print(text, out){
 
   text = text || [];
 
-  text.concat([""]).forEach( (v) => {
+  text = (text.length > 0) ? text.concat([""]) : text;
+
+  text.forEach( (v) => {
     this._output(v);
   });
 
@@ -26,9 +28,10 @@ export function print(text, out){
       $active.setAttribute("id", "active");
       $active.innerHTML = "C:\\Users\\Bartek><span class='command'></span>";
 
+  this.windowMain.scrollTop = this.windowMain.scrollHeight;
+
   if( out ){
     this.windowMain.appendChild( $active );
-    this.windowMain.scrollTop = this.windowMain.scrollHeight;
 
     this.activeEl = $active;
   }
